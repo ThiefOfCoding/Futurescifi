@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Protected Image Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet"> <!-- Fonte futurista -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Displaying Clock -->
+  <div id="clock" class="clock"></div>
+
+  <!-- Password Entry Area -->
+  <div class="password-container" id="password-container">
+    <h1>Locked!</h1>
+    <input type="password" id="password-input" placeholder="Enter Your Password now...">
+    <button id="unlock-btn">Submit</button>
+    <p id="error-message" class="error-message"></p>
+  </div>
+
+  <!-- Image Gallery (Hidden initially) -->
+  <div class="image-gallery" id="image-gallery" style="display: none;">
+    <h2></h2>
+    <div class="gallery-images">
+      <img src="https://xatimg.com/image/apzzAi0e6hXK.jpg" alt="Image 1">
+      <img src="https://xatimg.com/image/LvbJHceoXaqm.jpg" alt="Image 2">
+      <img src="https://xatimg.com/image/RxXPIBSkJCF4.jpg" alt="Image 3">
+      <img src="https://xatimg.com/image/6rOibxonzM48.jpg" alt="Image 4">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
