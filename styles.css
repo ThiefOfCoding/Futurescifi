@@ -1,0 +1,242 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(https://xatimg.com/image/xPg9gtEtmrCX.gif); /* Substitua pela URL da imagem de fundo */
+  background-size: cover;  /* Garante que a imagem cubra toda a tela */
+  background-position: center center;  /* Centraliza a imagem */
+  background-attachment: fixed;  /* Mantém a imagem fixa enquanto rola */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Clock Styling */
+.clock {
+  font-family: 'Orbitron', sans-serif; /* Fonte futurista */
+  font-size: 60px; /* Tamanho maior para destacar o relógio */
+  color: #00FFFF; /* Cor neon azul */
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.7); /* Sombra neon */
+  margin-bottom: 20px; /* Espaço entre o relógio e a caixa de senha */
+  animation: glow 1.5s ease-in-out infinite, moveClock 2s infinite; /* Animações de brilho e movimento */
+  position: relative; /* Necessário para o efeito de movimento */
+}
+
+/* Animação de brilho do relógio */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(0, 255, 255, 0.9), 0 0 40px rgba(0, 255, 255, 0.9);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.7);
+  }
+}
+
+/* Animação de movimento suave do relógio */
+@keyframes moveClock {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Move o relógio para cima */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Password Entry */
+.password-container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+  padding: 40px 30px;
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 0 30px 5px rgba(0, 255, 255, 0.7); /* Sombra de neon azul */
+  width: 100%;
+  max-width: 400px; /* Limita a largura */
+  animation: fadeIn 0.5s ease-in-out, floatAnimation 3s ease-in-out infinite; /* Adiciona animação de flutuação */
+  backdrop-filter: blur(5px); /* Suaviza o fundo atrás da caixa */
+  border: 2px solid #00FFFF; /* Borda neon */
+}
+
+/* Animação para o aparecimento suave da caixa */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação de flutuação (float) */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0); /* Início sem movimento */
+  }
+  50% {
+    transform: translateY(-10px); /* Move para cima */
+  }
+  100% {
+    transform: translateY(0); /* Retorna ao estado inicial */
+  }
+}
+
+.password-container h1 {
+  margin-bottom: 20px;
+  color: #00FFFF; /* Cor do texto em azul neon */
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF; /* Efeito de sombra neon */
+}
+
+/* Estilo do campo de senha */
+.password-container input {
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #00FFFF; /* Borda neon */
+  width: 100%;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+  color: #00FFFF; /* Texto azul neon */
+  transition: all 0.3s ease; /* Transição suave para foco */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Efeito de brilho ao redor */
+}
+
+/* Efeito de foco no campo de entrada */
+.password-container input:focus {
+  border-color: #FF00FF; /* Cor da borda ao focar */
+  background-color: #111; /* Fundo mais escuro */
+  outline: none; /* Remove a borda padrão do navegador */
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.8); /* Brilho rosa neon ao focar */
+}
+
+/* Botão de desbloqueio */
+.password-container button {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #00FFFF; /* Cor de fundo em neon */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7); /* Efeito de brilho */
+}
+
+/* Efeito de hover no botão */
+.password-container button:hover {
+  background-color: #FF00FF; /* Cor do botão ao passar o mouse */
+  transform: translateY(-2px); /* Leve movimento de "levitação" ao passar o mouse */
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.9); /* Brilho mais forte ao passar o mouse */
+}
+
+/* Efeito de pressionar o botão */
+.password-container button:active {
+  transform: translateY(1px); /* Efeito de pressionar */
+}
+
+/* Mensagem de erro */
+.error-message {
+  color: #FF00FF; /* Cor neon rosa */
+  margin-top: 10px;
+  font-size: 14px;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.7); /* Sombra neon para a mensagem de erro */
+}
+
+/* Image Gallery */
+.image-gallery {
+  width: 100%;
+  max-width: 900px;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para a galeria */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Sombra neon azul */
+  padding: 20px;
+  text-align: center;
+  animation: fadeInGallery 1s ease-in-out; /* Animação para a galeria aparecer */
+  backdrop-filter: blur(8px); /* Efeito de desfoque no fundo da galeria */
+  border: 2px solid #00FFFF; /* Borda neon */
+}
+
+@keyframes fadeInGallery {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.gallery-images img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Efeito de brilho nas imagens */
+  opacity: 0;
+  animation: popIn 1.5s ease-out forwards; /* Pop-in effect */
+  transform: scale(0.8); /* Começa um pouco menor */
+}
+
+/* Animação mais chamativa para cada imagem */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(45deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Efeito de hover nas imagens */
+.gallery-images img:hover {
+  transform: scale(1.1) rotate(5deg); /* Aumenta e gira um pouco */
+  box-shadow: 0 8px 16px rgba(0, 255, 255, 0.9); /* Aumenta a sombra neon */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .password-container {
+    width: 90%;
+    margin: 20px;
+  }
+
+  .gallery-images img {
+    max-width: 150px;
+    height: 150px;
+  }
+}
